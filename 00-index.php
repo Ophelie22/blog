@@ -38,11 +38,6 @@ $deuz = new Article(
 
 // Auto-contrôle visuel, à nouveau.
 print_r($deuz);
-
-
-
-
-
 //réer une instance Article pour un 3e article. Les infos de l'article
 // à créer sont fournies (en vrac) ci-dessous.
 
@@ -52,13 +47,18 @@ print_r($deuz);
     Posté par Lucie le 19 juin 2017 dans #Collaboration.
 */
 
-// --- START OF YOUR CODE ---
+
+
+// Juste pour montrer que ça fonctionne, on utilise ici 3 arguments du constructeur
+// et on attribue les autres valeurs en appelant les propriétés
+// On aurait faire comme $deuz (tout dans le constructeur) ou comme $prems (n'appeler que les propriétés)
 $troiz = new Article(
-    'Git, pour les n00bs.',
-    "Un p'tit récap rapide pour tout ceux qui, comme moi, ont galéré sur ce magnifique outil de versionning.",
-    'Lucie',
-    '2019-06-19'
+    'Git, pour les n00bs',
+    'Un p\'tit récap rapide pour tout ceux qui, comme moi, ont galéré sur ce magnifique outil de versionning.',
+    'Lucie'
 );
+$troiz->date = '2017-06-19';
+$troiz->category = 'Collaboration';
 
 // --- END OF YOUR CODE ---
 
