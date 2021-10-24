@@ -20,8 +20,8 @@ class Article
     public function getDateFr()
     {
         //DOC https://www.php.net/strtotime
-        $timestamp = strtotime($this->date);
-        return date('d/m/Y', $timestamp);
+        $date = new DateTime($this->date);
+        return $date->format('d/m/Y');
     }
 }
 
