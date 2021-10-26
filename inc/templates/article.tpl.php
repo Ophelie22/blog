@@ -1,45 +1,23 @@
 <?php
-class Article
-{
-    public $title;
-    public $content;
-    public $author;
-    public $date;
-    public $category;
 
-    public function __construct($titleParam = '', $contentParam = '', $authorParam = '', $dateParam = '', $categoryParam = '')
-    {
-        $this->title = $titleParam;
-        $this->content = $contentParam;
-        $this->author = $authorParam;
-        $this->date = $dateParam;
-        $this->category = $categoryParam;
-    }
+// $dataArticlesList est une variable de data.php qui contient tous nos articles
+// Chaque article est identifiable avec un index
 
-    // Bonus : on veut une méthode getDateFr() qui affiche la date de l'article dans un format français
-    public function getDateFr()
-    {
-        return $this->getDate('fr');
-    }
+// L'index de l'article demandé est dans le paramètre id de l'url
+// On le récupère dans $index
+$index = $_GET['id'];
 
-    public function getDate($lang = 'en')
-    {
-        // Tout comme getDateFr(), on crée un objet DateTime, de la même façon
-        $date = new DateTime($this->date);
+// Pour récupérer l'article demandé :
+$article = $dataArticlesList[$index];
 
-        // On pourrait aussi utiliser un switch
-        // qui a pour avantage de pouvoir combiner les différents dont les actions seront identiques
-        // Ici, en fr, de, et es, on affiche le même format
-        // En anglais et par défaut (tous formats inconnus), on affiche m/d/Y
-        switch ($lang) {
-            case 'fr':
-            case 'de':
-            case 'es':
-                return $date->format('d/m/Y');
-                break;
-            case 'en':
-            default:
-                return $date->format('m/d/Y');
-        }
-    }
-}
+// On a récupéré notre objet Article, on peut l'afficher
+?>
+<!-- emmet : article.container>.row>.col -->
+<article class="container">
+    <div class="row">
+        <div class="col">
+            <h2><?= $article->title ?></h2>
+            <p><?= $article->content ?></p>
+        </div>
+    </div>
+</article>

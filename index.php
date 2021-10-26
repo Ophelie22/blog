@@ -1,10 +1,7 @@
 <?php
 // Point d'entrée pour la page d'accueil
-
 // Inclusion des fichiers nécessaires
 require __DIR__ . '/inc/classes/Article.php';
-
-
 // Récupération des données nécessaires à la page (si besoin)
 // On récupère le paramètre page reçu en GET (dans l'url), s'il existe !
 // Avec ce if, on détermine la valeur de $requestedPage
@@ -15,6 +12,10 @@ if (!empty($_GET['page'])) {
 } else {
     $requestedPage = 'home';
 }
+
+// On insère les données qui sont dans data.php
+// On peut ensuite utiliser les trois variables déclarées dans data.php
+require __DIR__ . '/inc/data.php';
 
 // Affichage
 require __DIR__ . '/inc/templates/header.tpl.php';

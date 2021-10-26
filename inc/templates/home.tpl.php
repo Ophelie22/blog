@@ -1,34 +1,18 @@
 
-   
-    <div class="container">
-        <div class="row">
-            <div class="col-lg-8 col-md-12">
 
-                <?php
-               
-                /*décommenter ce bout de code pour visualiser le contenu de la variable $dataArticlesList
-                echo '<div style="border: solid 2px #F00">';
-                    echo '<div style="; background-color:#CCC">@'.__FILE__.' : '.__LINE__.'</div>';
-                    echo '<pre>';
-                    print_r($dataArticlesList);
-                    echo '</pre>';
-                echo '</div>';
-                */
-                //IMPORTANT nous bouclons sur la liste des articles $dataArticlesList
-                
-                foreach($dataArticlesList as $articleIndex => $article) :
-                ?>
+<?php
+                // On insère ici les articles à partir de $dataArticlesList
+                foreach ($dataArticlesList as $index => $article) {
+                    // On réutilise le HTML du template qui était statique
+                    ?>
                     <div class="card mb-4">
-                        <div class="card-header">
-                            <a href="index.php?page=article&id=<?=$articleIndex;?>"><?=$article->title?></a>
-                        </div>
-                        <div class="card-body"><?=$article->content;?></div>
+                        <div class="card-header"><a href="?page=article&id=<?= $index ?>"><?= $article->title ?></a></div>
+                        <div class="card-body"><?= $article->content ?></div>
                         <div></div>
                     </div>
-                <?php
-                endforeach;
+                    <?php
+                }
                 ?>
-
             </div>
 
             <div class="col-lg-4 col-md-12">
