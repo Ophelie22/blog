@@ -7,7 +7,7 @@ class Category
     public $id;
  
 
-    public function __construct($nameParam,)
+    public function __construct($nameParam)
     {
      
         $this->name = $nameParam;

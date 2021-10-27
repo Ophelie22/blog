@@ -19,7 +19,7 @@
   <!--feuille de style pour mon blog -->
   <link rel="stylesheet" href="./css/blog.css">
 
-  <title>Oblog, a la éerive</title>
+  <title>Oblog, a la dérive</title>
   </head>
   <body>
  <!-- HEADER -->
