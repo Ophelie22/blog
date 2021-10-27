@@ -40,12 +40,12 @@
       </button>
       <!-- Cette partie va automatique être masquée en version mobile -->
       <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
-        <ul class="navbar-nav ">
-        <?php
-          foreach ($dataCategoriesList as $category) {
+      <ul class="navbar-nav">
+          <?php
+          foreach ($dataCategoriesList as $index => $category) {
             echo '
             <li class="nav-item">
-              <a class="nav-link" href="?page=category&id=' . $category->id . '">' . $category->name . '</a>
+              <a class="nav-link" href="#">' . $category . '</a>
             </li>
             ';
           }
