@@ -4,7 +4,8 @@
 $dataArticlesList = [
     1 => new Article(
         'Ivre, il refait tous les challenges en un week-end sans dormir.',
-        'Ou comment j\'ai appris plein de choses en faisant une nouvelle fois tous les challenges que j\'avais loupé.',
+        'Ou comment j\'ai appris plein de choses en faisant une nouvelle fois tous 
+        les challenges que j\'avais loupé.',
         'Alexandre',
         '2017-07-13',
         'Ma Vie De Dev'
