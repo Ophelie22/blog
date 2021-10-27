@@ -4,6 +4,8 @@
 
 // Inclusion des fichiers nécessaires
 require __DIR__ . '/inc/classes/Article.php';
+require __DIR__ . '/inc/classes/Author.php';
+require __DIR__ . '/inc/classes/Category.php';
 
 // Récupération des données nécessaires à la page (si besoin)
 // On récupère le paramètre page reçu en GET (dans l'url), s'il existe !

@@ -2,16 +2,14 @@
 
 class Author
 {
-    public $id;
+  
     public $name;
-    public $image;
-    public $email;
+   
 
-    public function __construct($id, $name, $image, $email)
+    public function __construct($nameParam)
     {
-        $this->id = $id;
-        $this->name = $name;
-        $this->image = $image;
-        $this->email = $email;
+ 
+        $this->name = $nameParam;
+        
     }
 }
