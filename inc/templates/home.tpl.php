@@ -56,7 +56,7 @@
         <div class="card">
           <h3 class="card-header">Auteurs</h3>
           <ul class="list-group list-group-flush">
-            <<?php
+            <?php
             foreach ($dataAuthorsList as $index => $author) {
                 echo '<li class="list-group-item">' . $author . '</li>';
             }
