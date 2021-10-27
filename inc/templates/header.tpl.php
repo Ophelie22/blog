@@ -45,7 +45,7 @@
           foreach ($dataCategoriesList as $index => $category) {
             echo '
             <li class="nav-item">
-              <a class="nav-link" href="#">' . $category . '</a>
+              <a class="nav-link" href="?page=category&id=' . $index . '">' . $category . '</a>
             </li>
             ';
           }

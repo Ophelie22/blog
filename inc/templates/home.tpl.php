@@ -47,7 +47,7 @@
           <ul class="list-group list-group-flush">
             <?php
             foreach ($dataCategoriesList as $index =>$category){
-             echo '<li class="list-group-item">' . $category . '</li>';
+              echo '<li class="list-group-item"><a href="?page=category&id=' . $index . '">' . $category . '</a></li>';
             }
             ?>
           </ul>
@@ -58,7 +58,7 @@
           <ul class="list-group list-group-flush">
             <?php
             foreach ($dataAuthorsList as $index => $author) {
-                echo '<li class="list-group-item">' . $author . '</li>';
+              echo '<li class="list-group-item"><a href="?page=author&id=' . $index . '">' . $author . '</a></li>';
             }
             ?>
           </ul>
