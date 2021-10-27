@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="en">
 
@@ -12,8 +11,6 @@
         integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
     <!-- Bonus : on inclut une librairie CSS permettant d'afficher des icônes :  -->
     <link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
-    <!-- nous chargeons notre css en dernier, car nous voulons que les règles que nous déclarons soient celles qui prennent la main //-->
-    <link rel="stylesheet" href="css/style.css" />
 </head>
 <body>
     <!-- On utilise le composant navbar de la doc Bootstrap -->
@@ -28,16 +25,16 @@
         <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
             <ul class="navbar-nav ">
                 <li class="nav-item active">
-                    <a class="nav-link" href="index.php?page=category">Teamback <span class="sr-only">(current)</span></a>
+                    <a class="nav-link" href="index.php">Teamback <span class="sr-only">(current)</span></a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="index.php?page=category">Teamfront</a>
+                    <a class="nav-link" href="category.php">Teamfront</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="index.php?page=category">Collaboration</a>
+                    <a class="nav-link" href="category.php">Collaboration</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="index.php?page=category">Ma vie de dev</a>
+                    <a class="nav-link" href="category.php">Ma vie de dev</a>
                 </li>
             </ul>
         </div>
@@ -49,4 +46,4 @@
     </div>
     <div class="container-fluid text-center pb-4">
         Un blog collaboratif de développeurs web dérivant délibérément au milieu de l'espace
-    </div>
+    </div> 

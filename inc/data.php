@@ -30,13 +30,6 @@ $dataArticlesList = [
         '2017-05-06',
         'Ma Vie De Dev'
     ),
-    5 => new Article(
-        'Je suis plusieurs dans ma tête',
-        "C'est ce qui arrive lorsque l'on fait trop de css",
-        'Julien',
-        '2020-08-21',
-        'Ma Vie De Dev'
-    ),
 ];
 
 // Les catégories
@@ -56,5 +49,4 @@ $dataAuthorsList = [
     5 => 'Julie',
     6 => 'Lucie',
     7 => 'Xavier'
-];
-
+]; 
