@@ -1,18 +1,22 @@
-
-
-<?php
-                // On insère ici les articles à partir de $dataArticlesList
-                foreach ($dataArticlesList as $index => $article) {
-                    // On réutilise le HTML du template qui était statique
-                    ?>
+<div class="container">
+        <div class="row">
+            <div class="col-lg-8 col-md-12">
+           
+            <?php
+                foreach($dataArticlesList as $articleIndex => $article) :
+                ?>
+                    <!-- emmet : (div.card>div.card-header>lorem5^div.card-body>lorem40^div)*4 -->
                     <div class="card mb-4">
-                        <div class="card-header"><a href="?page=article&id=<?= $index ?>"><?= $article->title ?></a></div>
-                        <div class="card-body"><?= $article->content ?></div>
+                        <div class="card-header">
+                            <a href="article.php"><?=$article->title?></a>
+                        </div>
+                        <div class="card-body"><?=$article->content;?></div>
                         <div></div>
                     </div>
-                    <?php
-                }
+                <?php
+                endforeach;
                 ?>
+
             </div>
 
             <div class="col-lg-4 col-md-12">

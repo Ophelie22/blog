@@ -13,40 +13,47 @@
     <!-- Bonus : on inclut une librairie CSS permettant d'afficher des icônes :  -->
     <link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
     <!-- nous chargeons notre css en dernier, car nous voulons que les règles que nous déclarons soient celles qui prennent la main //-->
-    <link rel="stylesheet" href="css/style.css" />
+    <link rel="stylesheet" href="./css. />
 </head>
 <body>
-    <!-- On utilise le composant navbar de la doc Bootstrap -->
-    <nav class="navbar navbar-expand-lg navbar-expand-md navbar-light bg-light">
-        <a class="navbar-brand" href="index.php">A la dérive</a>
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
-            aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-        </button>
-        <!-- Ici on ajoute la classe justify-content-end pour aligner les éléments de menu sur la droite -->
-        <!-- On pense aussi à retirer l'élément de l'exemple "disabled" -->
-        <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
-            <ul class="navbar-nav ">
-                <li class="nav-item active">
-                    <a class="nav-link" href="index.php?page=category">Teamback <span class="sr-only">(current)</span></a>
+      <!-- HEADER -->
+  <header>
+    <!-- NAV -->
+    <nav class="navbar navbar-expand-md navbar-light">
+      <!--
+        Nous sommes en mobile first : par défaut notre menu est masqué !
+        Je souhaite qu'il s'affiche au dela (= à partir de) d'une certainne largeur.
+        navbar-expand-xxx permet d'afficher le menu en entier.
+        xxx correspond à une taille (media-query) définie dans Bootstrap.
+          sm => 576px
+          md => 768px
+          lg => 992px
+          xl => 1200px
+        -->
+      <a class="navbar-brand" href="./">A la dérive</a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
+        aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        Menu <span class="navbar-toggler-icon"></span>
+      </button>
+      <!-- Cette partie va automatique être masquée en version mobile -->
+      <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
+        <ul class="navbar-nav ">
+          <li class="nav-item">
+            <a class="nav-link"href="index.php?page=category">Teamback <span class="sr-only">(current)</span></a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="index.php?page=category">Teamfront</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="index.php?page=category">Collaboration</a>
                 </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="index.php?page=category">Teamfront</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="index.php?page=category">Collaboration</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="index.php?page=category">Ma vie de dev</a>
-                </li>
-            </ul>
-        </div>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="index.php?page=category">Ma vie de dev</a>
+        </ul>
+      </div>
     </nav>
-    <!-- Utilisation d'un container fluid pour occuper tout l'espace horizontal -->
-    <!-- Ajout de la class text-center pour centrer le texte -->
-    <div class="container-fluid text-center p-4">
-        <h1>A la dérive</h1>
-    </div>
-    <div class="container-fluid text-center pb-4">
-        Un blog collaboratif de développeurs web dérivant délibérément au milieu de l'espace
-    </div>
+    <section class="text-center">
+      <h1>A la dérive</h1>
+      <hr />
+      <p>
