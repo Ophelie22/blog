@@ -49,5 +49,5 @@ $dataAuthorsList = [
     4 => 'Dario',
     5 => 'Julie',
     6 => 'Lucie',
-    7 => 'Xavier'
+    7 => 'Gregory'
 ]; 
