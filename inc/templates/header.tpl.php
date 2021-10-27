@@ -19,13 +19,8 @@
   <!-- Ma feuille de style pour mon blog -->
   <link rel="stylesheet" href="./css/blog.css">
 
-  <title>Hello, world!</title>
-</head>
-
-<body>
-
-  <!-- HEADER -->
-  <header>
+ <!-- HEADER -->
+ <header>
     <!-- NAV -->
     <nav class="navbar navbar-expand-md navbar-light">
       <!--
@@ -45,16 +40,19 @@
       </button>
       <!-- Cette partie va automatique être masquée en version mobile -->
       <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
-        <ul class="navbar-nav">
-          <?php
-          foreach ($dataCategoriesList as $category) {
-            echo '
-            <li class="nav-item">
-              <a class="nav-link" href="?page=category&id=' . $category->id . '">' . $category->name . '</a>
-            </li>
-            ';
-          }
-          ?>
+        <ul class="navbar-nav ">
+          <li class="nav-item">
+            <a class="nav-link" href="#">TeamBack</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">TeamFront</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">Collaboration</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">Ma Vie De Dev</a>
+          </li>
         </ul>
       </div>
     </nav>
@@ -63,6 +61,7 @@
       <hr />
       <p>
         Un blog collaboratif de développeurs web dérivant délibérément au milieu de l'espace
+    </div> 
       </p>
     </section>
-  </header>
+  </header> 

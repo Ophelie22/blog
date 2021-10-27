@@ -3,7 +3,7 @@
     <div class="container">
         <div class="row">
             <div class="col-lg-8 col-md-12">
-                <!-- emmet : (div.card>div.card-header>lorem5^div.card-body>lorem40^div)*4 -->
+              
                 <div class="card mb-4">
                     <div class="card-header"><a href="article.php">Lorem ipsum dolor sit amet.</a></div>
                     <div class="card-body">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Obcaecati repellat
@@ -74,9 +74,6 @@
                 </div>
             </div>
         </div>
-<<<<<<< HEAD
-    </div> 
-=======
     </div>
  <!-- Mon container (avec une max-width) dans lequel mon contenu va être placé: https://getbootstrap.com/docs/4.1/layout/overview/#containers -->
  <div class="container">
@@ -184,4 +181,3 @@
 
       </aside>
     </div>
->>>>>>> cut-cut-cut

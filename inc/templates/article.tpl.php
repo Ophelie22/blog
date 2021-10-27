@@ -1,31 +1,6 @@
 <!-- <?php
 // $dataArticlesList est une variable de data.php qui contient tous nos articles
 // Chaque article est identifiable avec un index
-// L'index de l'article demandé est dans le paramètre id de l'url
-// On le récupère dans $index
-// Supposons qu'un petit malin modifie l'url.
-//      Soit il supprime le paramètre «id»
-//      Soit il met un id qui n'existe pas
-//  On obtient alors un erreur et on souhaite éviter à tout prix d'afficher une erreur PHP au client (navigateur)
-// Il faudrait vérifier que le paramètre id existe, qu'il n'est pas vide et qu'il est valide !
-if (!empty($_GET['id'])) {
-    $index = $_GET['id'];
-} else {
-    exit('Petit malin !!');
-}
-// On n'a pas encore vérifié que cet id est valide
-if (isset($dataArticlesList[$index])) {
-    // Pour récupérer l'article demandé :
-    $article = $dataArticlesList[$index];
-} else {
-    exit('Petit malin !!');
-}
-// Les deux if-else précédents peuvent être raccourcis ainsi :
-// if (!empty($_GET['id']) && isset($dataArticlesList[$_GET['id']])) {
-//     $article = $dataArticlesList[$index];
-// } else {
-//     exit('Petit malin !!');
-// }
 // On a récupéré notre objet Article, on peut l'afficher
 ?>
 <article class="container">
@@ -35,8 +10,7 @@ if (isset($dataArticlesList[$index])) {
             <p><?= $article->content ?></p>
         </div>
     </div>
-</article> -->
-
+</article>-->
 <!-- Mon container (avec une max-width) dans lequel mon contenu va être placé: https://getbootstrap.com/docs/4.1/layout/overview/#containers -->
 <div class="container">
     <!-- Je crée une nouvelle ligne dans ma grille virtuelle: https://getbootstrap.com/docs/4.1/layout/grid/-->
@@ -78,7 +52,6 @@ if (isset($dataArticlesList[$index])) {
             <button class="btn btn-outline-secondary" type="button">Allez</button>
           </div>
         </div>
-
         <!-- Catégories: https://getbootstrap.com/docs/4.1/components/card/#list-groups-->
         <div class="card">
           <h3 class="card-header">Catégories</h3>
