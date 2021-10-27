@@ -3,7 +3,7 @@
 // Point d'entrée pour la page d'accueil
 
 // Inclusion des fichiers nécessaires
-require __DIR__ . '/inc/Article.php';
+require __DIR__ . '/inc/classes/Article.php';
 
 // Récupération des données nécessaires à la page (si besoin)
 // On récupère le paramètre page reçu en GET (dans l'url), s'il existe !

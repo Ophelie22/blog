@@ -41,18 +41,15 @@
       <!-- Cette partie va automatique être masquée en version mobile -->
       <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
         <ul class="navbar-nav ">
-          <li class="nav-item">
-            <a class="nav-link" href="#">TeamBack</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="#">TeamFront</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="#">Collaboration</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="#">Ma Vie De Dev</a>
-          </li>
+        <?php
+          foreach ($dataCategoriesList as $category) {
+            echo '
+            <li class="nav-item">
+              <a class="nav-link" href="?page=category&id=' . $category->id . '">' . $category->name . '</a>
+            </li>
+            ';
+          }
+          ?>
         </ul>
       </div>
     </nav>
