@@ -63,23 +63,22 @@ if (isset($dataArticlesList[$index])) {
         <div class="card">
           <h3 class="card-header">Catégories</h3>
           <ul class="list-group list-group-flush">
-            <li class="list-group-item">TeamBack</li>
-            <li class="list-group-item">TeamFront</li>
-            <li class="list-group-item">Collaboration</li>
-            <li class="list-group-item">Ma Vie De Dev</li>
+          <?php
+            foreach ($dataCategoriesList as $index => $category) {
+                echo '<li class="list-group-item">' . $category . '</li>';
+            }
+            ?>
           </ul>
         </div>
         <!-- Auteurs: https://getbootstrap.com/docs/4.1/components/card/#list-groups -->
         <div class="card">
           <h3 class="card-header">Auteurs</h3>
           <ul class="list-group list-group-flush">
-            <li class="list-group-item">Maxime</li>
-            <li class="list-group-item">Anthony</li>
-            <li class="list-group-item">Alexandre</li>
-            <li class="list-group-item">Dario</li>
-            <li class="list-group-item">Julie</li>
-            <li class="list-group-item">Lucie</li>
-            <li class="list-group-item">Xavier</li>
+          <?php
+            foreach ($dataAuthorsList as $index => $author) {
+                echo '<li class="list-group-item">' . $author . '</li>';
+            }
+            ?>
           </ul>
         </div>
       </aside>
