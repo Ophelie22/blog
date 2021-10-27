@@ -49,3 +49,9 @@ foreach ($dataArticlesList as $index => $article) {
                 <?php
             }
             ?>
+        </main>
+
+        <?php
+            require __DIR__.'/sidebar.tpl.php';
+        ?>
+    </div>

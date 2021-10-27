@@ -16,9 +16,12 @@
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css"
     integrity="sha384-WskhaSGFgHYWDcbwN70/dfYBj47jz9qbsMId/iRN3ewGhXQFZCSftd1LZCfmhktB" crossorigin="anonymous">
 
-  <!-- Ma feuille de style pour mon blog -->
+  <!--feuille de style pour mon blog -->
   <link rel="stylesheet" href="./css/blog.css">
 
+  <title>Oblog, a la éerive</title>
+  </head>
+  <body>
  <!-- HEADER -->
  <header>
     <!-- NAV -->

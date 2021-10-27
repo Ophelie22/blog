@@ -1,13 +1,13 @@
-<!-- Mon container (avec une max-width) dans lequel mon contenu va être placé: https://getbootstrap.com/docs/4.1/layout/overview/#containers -->
-<div class="container">
+ <!-- Mon container (avec une max-width) dans lequel mon contenu va être placé: https://getbootstrap.com/docs/4.1/layout/overview/#containers -->
+ <div class="container">
     <!-- Je crée une nouvelle ligne dans ma grille virtuelle: https://getbootstrap.com/docs/4.1/layout/grid/-->
-  <div class="row">
+    <div class="row">
 
       <!-- Par défaut (= sur mobile) mon element <main> prend toutes les colonnes (=12)
         MAIS au dela d'une certaine taille, il n'en prendra plus que 9
         https://getbootstrap.com/docs/4.1/layout/grid/#grid-options -->
-    <main class="col-lg-9">
-    <?php
+      <main class="col-lg-9">
+        <?php
         foreach ($dataArticlesList as $index => $article) {
             ?>
             <!-- Je dispose une card: https://getbootstrap.com/docs/4.1/components/card/ -->
@@ -31,9 +31,10 @@
             <li class="page-item"><a class="page-link" href="#">Suivant <i class="fa fa-arrow-right"></i></a></li>
           </ul>
         </nav>
+
       </main>
+
       <?php
         require __DIR__.'/sidebar.tpl.php';
       ?>
-    </div><!-- /.row --
-      
+    </div><!-- /.row -->

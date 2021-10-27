@@ -50,3 +50,7 @@ foreach ($dataArticlesList as $index => $article) {
             }
             ?>
         </main>
+        <?php
+            require __DIR__.'/sidebar.tpl.php';
+        ?>
+        </div>
