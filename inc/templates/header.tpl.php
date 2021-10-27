@@ -10,24 +10,7 @@
   <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,800" rel="stylesheet">
 
   <!-- Font-Awesome CSS -->
-  <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
-
-  <!-- Bootstrap CSS -->
-  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css"
-    integrity="sha384-WskhaSGFgHYWDcbwN70/dfYBj47jz9qbsMId/iRN3ewGhXQFZCSftd1LZCfmhktB" crossorigin="anonymous">
-
-  <!-- Ma feuille de style pour mon blog -->
-  <link rel="stylesheet" href="./css/blog.css">
-
-  <title>Hello, world!</title>
-</head>
-
-<body>
-
-  <!-- HEADER -->
-  <header>
-    <!-- NAV -->
-    <nav class="navbar navbar-expand-md navbar-light">
+  <nav class="navbar navbar-expand-md navbar-light">
       <!--
         Nous sommes en mobile first : par défaut notre menu est masqué !
         Je souhaite qu'il s'affiche au dela (= à partir de) d'une certainne largeur.
@@ -45,16 +28,19 @@
       </button>
       <!-- Cette partie va automatique être masquée en version mobile -->
       <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
-        <ul class="navbar-nav">
-          <?php
-          foreach ($dataCategoriesList as $category) {
-            echo '
-            <li class="nav-item">
-              <a class="nav-link" href="?page=category&id=' . $category->id . '">' . $category->name . '</a>
-            </li>
-            ';
-          }
-          ?>
+        <ul class="navbar-nav ">
+          <li class="nav-item">
+            <a class="nav-link" href="#">TeamBack</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">TeamFront</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">Collaboration</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">Ma Vie De Dev</a>
+          </li>
         </ul>
       </div>
     </nav>
