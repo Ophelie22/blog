@@ -17,7 +17,7 @@
                     <p class="card-text"><?= $article->content ?></p>
                     <p class="infos">
                     Posté par <a href="#" class="card-link"><?= $article->author ?></a> le <time datetime="<?= $article->date ?>"><?= $article->getDateFr() ?></time> dans <a href="#"
-                    class="card-link">#<?= $article->category ?></a>
+                    class="card-link">#<?= str_replace(' ', '', $article->category) ?></a>
                     </p>
                 </div>
             </article>
