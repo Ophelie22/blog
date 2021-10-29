@@ -6,7 +6,7 @@
 // $pdo = new PDO('mysql:dbname=oblog;host=localhost', 'explorateur', 'Ereul9Aeng');
 $pdo= new PDO('mysql: dbname=oblog;host=127.0.0.1:3306;charset=UTF8',
 'ophelie',
-'test',// vrai md passe non communiqué :)
+'',// vrai md passe non communiqué :)
 [
     // Option to display an error when SQL syntax is incorrect
     // On envoie une option supplémentaire pour indiquer à PHP de prendre les erreurs de MySQL transmises par PDO

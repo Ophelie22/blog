@@ -7,9 +7,9 @@
 // IL nous faut avant tout se connecter la BDD
 
 $pdo = new PDO(
-    'mysql:dbname=oblog;host= 127.0.0.1:3306;charset=UTF8',
+    'mysql:dbname=oblog;host=localhost;charset=UTF8',
     'ophelie',
-    'test',
+    'mdp',//mdp a rectifier
     [PDO::ATTR_ERRMODE => PDO::ERRMODE_WARNING]
 );
 
@@ -30,9 +30,43 @@ $sqlAuthor = '
     SELECT *
     FROM author
 ';
+
 // On les exécute et on récupère le résultat
 // On obtient bien des tableaux contenant des tableaux associatifs et non des objets comme avant
 
-$dataArticlesList = $pdo->query($sqlArticle)->fetchAll(PDO::FETCH_ASSOC);
-$dataCategoriesList = $pdo->query($sqlCategory)->fetchAll(PDO::FETCH_ASSOC);
-$dataAuthorsList = $pdo->query($sqlAuthor)->fetchAll(PDO::FETCH_ASSOC);
+$dataArticlesResults = $pdo->query($sqlArticle)->fetchAll(PDO::FETCH_ASSOC);
+$dataCategoriesResults = $pdo->query($sqlCategory)->fetchAll(PDO::FETCH_ASSOC);
+$dataAuthorsResults = $pdo->query($sqlAuthor)->fetchAll(PDO::FETCH_ASSOC);
+
+
+// On transforme ces tableaux de tableaux en tableaux d'objets
+$dataArticlesList = [];
+foreach ($dataArticlesResults as $arrayArticle) {
+    $dataArticlesList[] = new Article(
+        $arrayArticle['title'],
+        $arrayArticle['content'],
+        $arrayArticle['author_id'],
+        $arrayArticle['published_date'],
+        $arrayArticle['category_id']
+    );
+}
+
+// d($dataArticlesResults, $dataArticlesList);
+
+$dataCategoriesList = [];
+foreach ($dataCategoriesResults as $arrayCategory) {
+    $dataCategoriesList[] = new Category(
+        $arrayCategory['name']
+    );
+}
+
+// d($dataCategoriesResults, $dataCategoriesList);
+
+$dataAuthorsList = [];
+foreach ($dataAuthorsResults as $arrayAuthor) {
+    $dataAuthorsList[] = new Author(
+        $arrayAuthor['name']
+    );
+}
+
+// d($dataAuthorsResults, $dataAuthorsList);

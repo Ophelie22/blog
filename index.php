@@ -7,6 +7,8 @@ require __DIR__ . '/inc/classes/Article.php';
 require __DIR__ . '/inc/classes/Author.php';
 require __DIR__ . '/inc/classes/Category.php';
 
+//ajout du kint.phar  pour debuger
+require __DIR__ . '/inc/kint.phar';
 // Récupération des données nécessaires à la page (si besoin)
 // On récupère le paramètre page reçu en GET (dans l'url), s'il existe !
 // Avec ce if, on détermine la valeur de $requestedPage
@@ -20,8 +22,8 @@ if (!empty($_GET['page'])) {
 
 // On insère les données qui sont dans data.php
 // On peut ensuite utiliser les trois variables déclarées dans data.php
-require __DIR__ . '/inc/data.php';
-
+require __DIR__ . '/inc/data_from_db.php';
+//d($dataArticlesList);
 // Affichage
 require __DIR__ . '/inc/templates/header.tpl.php';
 require __DIR__ . '/inc/templates/' . $requestedPage . '.tpl.php';
