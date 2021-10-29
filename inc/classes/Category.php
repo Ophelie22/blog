@@ -3,14 +3,14 @@
 class Category
 {
    
-    public $name;
     public $id;
- 
+    public $name;
+    //public $position;
 
-    public function __construct($nameParam)
+    public function __construct($id, $name, $position)
     {
-     
-        $this->name = $nameParam;
-    
+        $this->id = $id;
+        $this->name = $name;
+        //$this->position = $position;
     }
 }

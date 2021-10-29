@@ -10,18 +10,25 @@
 //  On obtient alors un erreur et on souhaite éviter à tout prix d'afficher une erreur PHP au client (navigateur)
 // Il faudrait vérifier que le paramètre id existe, qu'il n'est pas vide et qu'il est valide !
 if (!empty($_GET['id'])) {
-    $index = $_GET['id'];
+    $id = $_GET['id'];
 } else {
     exit('Petit malin !!');
 }
 // On n'a pas encore vérifié que cet id est valide
-if (isset($dataArticlesList[$index])) {
+// /if (isset($dataArticlesList[$index])) {
+// 
     // Pour récupérer l'article demandé :
-    $article = $dataArticlesList[$index];
-} else {
-    exit('Petit malin !!');
-}
+//     $article = $dataArticlesList[$index];
+// } else {
+//     exit('Petit malin !!');
+// }
 // On a récupéré notre objet Article, on peut l'afficher
+// On obtient l'article demandé depuis DBData
+$article = $dbData->getOnePost($id);
+
+// On récupère l'objet Category et l'objet Author de notre article
+$category = $dbData->getOneCategory($article->category);
+$author = $dbData->getOneAuthor($article->author);
 ?>
 
 <!-- Mon container (avec une max-width) dans lequel mon contenu va être placé: https://getbootstrap.com/docs/4.1/layout/overview/#containers -->
@@ -37,10 +44,10 @@ if (isset($dataArticlesList[$index])) {
           <div class="card-body">
             <h2 class="card-title"><?= $article->title ?></h2>
             <p class="infos">
-            Posté par <a href="#" class="card-link"><?= $article->author ?></a> le <time datetime="<?= $article->date ?>"><?= $article->getDateFr() ?></time> dans <a href="#"
-                class="card-link">#<?= str_replace(' ', '', $article->category) ?></a>
+            Posté par <a href="#" class="card-link"><?= $author->name ?></a> le <time datetime="<?= $article->date ?>"><?= $article->getDateFr() ?></time> dans <a href="#"
+                class="card-link">#<?= str_replace(' ', '', $category->name) ?></a>
             </p>
-            <p class="card-text"><?= $article->content ?></p>
+            <p class="card-text"><?= $article->resume ?></p>
           </div>
         </article>
           <!-- Je met un element de navigation: https://getbootstrap.com/docs/4.1/components/pagination/ -->

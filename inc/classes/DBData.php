@@ -40,7 +40,9 @@ class DBData
         $dataArticlesList = [];
         foreach ($dataArticlesResults as $arrayArticle) {
             $dataArticlesList[] = new Article(
+                $arrayArticle['id'],
                 $arrayArticle['title'],
+                $arrayArticle['resume'],
                 $arrayArticle['content'],
                 $arrayArticle['author_id'],
                 $arrayArticle['published_date'],
@@ -50,6 +52,26 @@ class DBData
 
         return $dataArticlesList;
     }
+    public function getOnePost($id)
+    {
+        $sql = 'SELECT * FROM post WHERE id = ' . $id;
+
+        // On utilise fetch au lieu de fetchAll car on sait qu'on n'obtiendra qu'un seul résultat
+        $arrayArticle = $this->pdo->query($sql)->fetch(PDO::FETCH_ASSOC);
+
+        $article = new Article(
+            $arrayArticle['id'],
+            $arrayArticle['title'],
+            $arrayArticle['resume'],
+            $arrayArticle['content'],
+            $arrayArticle['author_id'],
+            $arrayArticle['published_date'],
+            $arrayArticle['category_id']
+        );
+
+        return $article;
+    }
+
 
     public function getAllCategories()
     {
@@ -63,7 +85,9 @@ class DBData
         $dataCategoriesList = [];
         foreach ($dataCategoriesResults as $arrayCategory) {
             $dataCategoriesList[] = new Category(
-                $arrayCategory['name']
+                $arrayCategory['id'],
+                $arrayCategory['name'],
+                $arrayCategory['position']
             );
         }
 
@@ -82,10 +106,32 @@ class DBData
         $dataAuthorsList = [];
         foreach ($dataAuthorsResults as $arrayAuthor) {
             $dataAuthorsList[] = new Author(
-                $arrayAuthor['name']
+                $arrayAuthor['id'],
+                $arrayAuthor['name'],
+                $arrayAuthor['image'],
+                $arrayAuthor['email']
+
             );
         }
 
         return $dataAuthorsList;
     }
-}    
+
+    public function getOneAuthor($id)
+    {
+        $sql = 'SELECT * FROM author WHERE id = ' . $id;
+
+        $arrayAuthor = $this->pdo->query($sql)->fetch(PDO::FETCH_ASSOC);
+
+        $author = new Author(
+            $arrayAuthor['id'],
+            $arrayAuthor['name'],
+            $arrayAuthor['image'],
+            $arrayAuthor['email']
+        );
+
+        return $author;
+    }
+}
+
+  

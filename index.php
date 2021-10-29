@@ -22,8 +22,12 @@ if (!empty($_GET['page'])) {
 
 // On insère les données qui sont dans data.php
 // On peut ensuite utiliser les trois variables déclarées dans data.php
-require __DIR__ . '/inc/data_from_db.php';
+// On commande la ligne précédente et on utilise maintenant les données en BDD
+//require __DIR__ . '/inc/data_from_db.php';
 
+
+// On instancie notre objet DBData
+// Dans son constructeur, il crée un objet PDO et le place en propriété privée
 $dbData = new DBdata();
 // On va retrouver les tableaux d'articles, de catégories et d'auteurs qu'on se servait
 $dataArticlesList = $dbData->getAllPosts();

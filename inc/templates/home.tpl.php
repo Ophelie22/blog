@@ -8,13 +8,13 @@
         https://getbootstrap.com/docs/4.1/layout/grid/#grid-options -->
       <main class="col-lg-9">
         <?php
-        foreach ($dataArticlesList as $index => $article) {
+        foreach ($dataArticlesList as $article) {
             ?>
             <!-- Je dispose une card: https://getbootstrap.com/docs/4.1/components/card/ -->
             <article class="card">
                 <div class="card-body">
-                    <h2 class="card-title"><a href="?page=article&id=<?= $index ?>"><?= $article->title ?></a></h2>
-                    <p class="card-text"><?= $article->content ?></p>
+                    <h2 class="card-title"><a href="?page=article&id=<?= $aticle->id ?>"><?= $article->title ?></a></h2>
+                    <p class="card-text"><?= $article->resume ?></p>
                     <p class="infos">
                     Posté par <a href="#" class="card-link"><?= $article->author ?></a> le <time datetime="<?= $article->date ?>"><?= $article->getDateFr() ?></time> dans <a href="#"
                     class="card-link">#<?= str_replace(' ', '', $article->category) ?></a>

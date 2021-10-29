@@ -1,20 +1,23 @@
 <?php
 class Article
 {
+    public $id;
     public $title;
+    public $resume;
     public $content;
     public $author;
     public $date;
     public $category;
 
-    public function __construct($titleParam = '', $contentParam = '', $authorParam = '', $dateParam = '', $categoryParam = '')
+    public function __construct($id = '', $title = '', $resume = '', $content = '', $author = '', $date = '', $category = '')
     {
-        $this->title = $titleParam;     //propriete title et cette propriete title aura pour valeur 
-                                        //ce qui se trouve dans $titleParams
-        $this->content = $contentParam;
-        $this->author = $authorParam;
-        $this->date = $dateParam;
-        $this->category = $categoryParam;
+        $this->id = $id;  
+        $this->title = $title;     //propriete title et cette propriete title aura pour valeur 
+        $this->resume = $resume;                                  //ce qui se trouve dans $titleParams
+        $this->content = $content;
+        $this->author = $author;
+        $this->date = $date;
+        $this->category = $category;
     }
 
     // Bonus : on veut une méthode getDateFr() qui affiche la date de l'article dans un format français
