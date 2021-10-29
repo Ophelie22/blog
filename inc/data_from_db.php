@@ -9,7 +9,7 @@
 $pdo = new PDO(
     'mysql:dbname=oblog;host=localhost;charset=UTF8',
     'ophelie',
-    'mdp',//mdp a rectifier
+    'pensee',//mdp a rectifier
     [PDO::ATTR_ERRMODE => PDO::ERRMODE_WARNING]
 );
 

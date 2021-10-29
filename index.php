@@ -6,7 +6,7 @@
 require __DIR__ . '/inc/classes/Article.php';
 require __DIR__ . '/inc/classes/Author.php';
 require __DIR__ . '/inc/classes/Category.php';
-
+require __DIR__ . '/inc/classes/DBData.php';
 //ajout du kint.phar  pour debuger
 require __DIR__ . '/inc/kint.phar';
 // Récupération des données nécessaires à la page (si besoin)
@@ -23,6 +23,12 @@ if (!empty($_GET['page'])) {
 // On insère les données qui sont dans data.php
 // On peut ensuite utiliser les trois variables déclarées dans data.php
 require __DIR__ . '/inc/data_from_db.php';
+
+$dbData = new DBdata();
+// On va retrouver les tableaux d'articles, de catégories et d'auteurs qu'on se servait
+$dataArticlesList = $dbData->getAllPosts();
+$dataCategoriesList = $dbData->getAllCategories();
+$dataAuthorsList = $dbData->getAllAuthors();
 //d($dataArticlesList);
 // Affichage
 require __DIR__ . '/inc/templates/header.tpl.php';
