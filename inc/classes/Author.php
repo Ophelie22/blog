@@ -9,7 +9,7 @@ class Author
     public $email;
    
 
-    public function __construct( $id,$name, $image,$email)
+    public function __construct($id, $name, $image, $email)
     {
         $this->id = $id;
         $this->name = $name;

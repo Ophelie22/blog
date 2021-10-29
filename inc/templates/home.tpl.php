@@ -1,5 +1,5 @@
- <!-- Mon container (avec une max-width) dans lequel mon contenu va être placé: https://getbootstrap.com/docs/4.1/layout/overview/#containers -->
- <div class="container">
+  <!-- Mon container (avec une max-width) dans lequel mon contenu va être placé: https://getbootstrap.com/docs/4.1/layout/overview/#containers -->
+  <div class="container">
     <!-- Je crée une nouvelle ligne dans ma grille virtuelle: https://getbootstrap.com/docs/4.1/layout/grid/-->
     <div class="row">
 
@@ -9,15 +9,17 @@
       <main class="col-lg-9">
         <?php
         foreach ($dataArticlesList as $article) {
+          $category = $dbData->getOneCategory($article->category);
+          $author = $dbData->getOneAuthor($article->author);
             ?>
             <!-- Je dispose une card: https://getbootstrap.com/docs/4.1/components/card/ -->
             <article class="card">
                 <div class="card-body">
-                    <h2 class="card-title"><a href="?page=article&id=<?= $aticle->id ?>"><?= $article->title ?></a></h2>
+                    <h2 class="card-title"><a href="?page=article&id=<?= $article->id ?>"><?= $article->title ?></a></h2>
                     <p class="card-text"><?= $article->resume ?></p>
                     <p class="infos">
-                    Posté par <a href="#" class="card-link"><?= $article->author ?></a> le <time datetime="<?= $article->date ?>"><?= $article->getDateFr() ?></time> dans <a href="#"
-                    class="card-link">#<?= str_replace(' ', '', $article->category) ?></a>
+                    Posté par <a href="#" class="card-link"><?= $author->name ?></a> le <time datetime="<?= $article->date ?>"><?= $article->getDateFr() ?></time> dans <a href="#"
+                    class="card-link">#<?= str_replace(' ', '', $category->name) ?></a>
                     </p>
                 </div>
             </article>
@@ -36,5 +38,5 @@
 
       <?php
         require __DIR__.'/sidebar.tpl.php';
-      ?>
-    </div><!-- /.row -->
+        ?>
+      </div>

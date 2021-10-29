@@ -52,22 +52,24 @@ class DBData
 
         return $dataArticlesList;
     }
+
     public function getOnePost($id)
     {
+       
         $sql = 'SELECT * FROM post WHERE id = ' . $id;
-
-        // On utilise fetch au lieu de fetchAll car on sait qu'on n'obtiendra qu'un seul résultat
         $arrayArticle = $this->pdo->query($sql)->fetch(PDO::FETCH_ASSOC);
+        // On utilise fetch au lieu de fetchAll car on sait qu'on n'obtiendra qu'un seul résultat
+      //d($this->pdo->query($sql)->fetch(PDO::FETCH_ASSOC));
 
-        $article = new Article(
-            $arrayArticle['id'],
-            $arrayArticle['title'],
-            $arrayArticle['resume'],
-            $arrayArticle['content'],
-            $arrayArticle['author_id'],
-            $arrayArticle['published_date'],
-            $arrayArticle['category_id']
-        );
+      $article = new Article(
+        $arrayArticle['id'],
+        $arrayArticle['title'],
+        $arrayArticle['resume'],
+        $arrayArticle['content'],
+        $arrayArticle['author_id'],
+        $arrayArticle['published_date'],
+        $arrayArticle['category_id']
+    );
 
         return $article;
     }
@@ -92,6 +94,20 @@ class DBData
         }
 
         return $dataCategoriesList;
+    }
+    public function getOneCategory($id)
+    {
+        $sql = 'SELECT * FROM category WHERE id = ' . $id;
+
+        $arrayCategory = $this->pdo->query($sql)->fetch(PDO::FETCH_ASSOC);
+
+        $category = new Category(
+            $arrayCategory['id'],
+            $arrayCategory['name'],
+            $arrayCategory['position']
+        );
+
+        return $category;
     }
 
     public function getAllAuthors()
@@ -132,6 +148,25 @@ class DBData
 
         return $author;
     }
+
+    public function addCategory($name)
+    {
+        $sql = "
+            INSERT INTO category (`name`)
+            VALUES ('$name');
+        ";
+
+        // On utilise exec et non query parce qu'on ajoute une donnée
+        $result = $this->pdo->exec($sql);
+        
+        // Notre méthode ici retourne true si l'ajout a fonctionné, false sinon
+        if (is_int($result)) {
+            return true;
+        } else {
+            return false;
+        }
+    }
 }
+
 
   

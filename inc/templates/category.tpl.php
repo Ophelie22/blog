@@ -10,7 +10,7 @@ if (!empty($_GET['id'])) {
 
 // On récupère la catégorie à afficher à partir de $index
 if (isset($dataCategoriesList[$index])) {
-  $category = $dataCategoriesList[$index];
+    $category = $dataCategoriesList[$index];
 } else {
     die('Arrête de jouer avec les URL !!');
 }
@@ -31,7 +31,7 @@ foreach ($dataArticlesList as $index => $article) {
 <div class="container">
     <div class="row">
         <main class="col-lg-9">
-            <h1><?= $category->name ?></h1> <!-- notre h1-->
+            <h1><?= $category->name ?></h1>
             <?php
             foreach ($categoryArticles as $index => $article) {
                 ?>
